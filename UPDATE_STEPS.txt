@@ -1,0 +1,19 @@
+STREAMCLIP AI — UPLOAD UPDATE
+
+Replace these 5 files in your GitHub repo:
+
+1. app.py
+2. requirements.txt
+3. static/index.html
+4. static/app.js
+5. static/styles.css
+
+After committing them, Render should automatically redeploy.
+
+New feature:
+- Upload MP4/MOV/MKV/WEBM directly
+- YouTube link option still exists
+- Upload mode skips YouTube entirely
+
+NOTE:
+Free Render is small. Start testing with a short video and use Whisper Base or Tiny.
