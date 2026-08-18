@@ -1,0 +1,147 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StreamClip AI</title>
+  <meta name="description" content="Turn long streams into vertical captioned Shorts." />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="glow glow-left"></div>
+  <div class="glow glow-right"></div>
+
+  <header class="nav">
+    <div class="brand">
+      <div class="logo">S</div>
+      <div>
+        <div class="brand-title">StreamClip AI</div>
+        <div class="brand-sub">Stream → Short</div>
+      </div>
+    </div>
+
+    <div class="badge">LOCAL AI • NO PAID API</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">AI STREAM HIGHLIGHTER</div>
+
+      <h1>
+        Turn a <span>1-hour stream</span><br />
+        into ready-to-post Shorts.
+      </h1>
+
+      <p class="lead">
+        Paste a public YouTube link. StreamClip AI transcribes the video,
+        finds the highest-energy moments, adds big captions, and renders
+        vertical clips automatically.
+      </p>
+
+      <div class="input-card">
+        <label for="youtubeUrl">YouTube URL</label>
+
+        <div class="url-row">
+          <input
+            id="youtubeUrl"
+            type="url"
+            placeholder="https://www.youtube.com/watch?v=..."
+            autocomplete="off"
+          />
+
+          <button id="analyzeBtn">
+            <span>✦</span>
+            Find highlights
+          </button>
+        </div>
+
+        <div class="options">
+          <div class="field">
+            <label for="clipCount">Clips</label>
+            <select id="clipCount">
+              <option value="3">Top 3</option>
+              <option value="5" selected>Top 5</option>
+              <option value="8">Top 8</option>
+              <option value="10">Top 10</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="modelSize">Whisper model</label>
+            <select id="modelSize">
+              <option value="tiny">Tiny — fastest</option>
+              <option value="base">Base</option>
+              <option value="small" selected>Small — recommended</option>
+              <option value="medium">Medium — slower</option>
+            </select>
+          </div>
+
+          <p class="permission-note">
+            Use footage you own or have permission to repurpose.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="progressSection" class="panel hidden">
+      <div class="panel-top">
+        <div>
+          <div class="eyebrow">PROCESSING</div>
+          <h2 id="statusTitle">Starting…</h2>
+        </div>
+
+        <div id="progressPercent" class="percent">0%</div>
+      </div>
+
+      <div class="progress-track">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+
+      <div class="steps">
+        <span id="stepDownload">Download</span>
+        <span id="stepTranscript">Transcript</span>
+        <span id="stepHighlights">Highlights</span>
+        <span id="stepRender">Render</span>
+      </div>
+    </section>
+
+    <section id="resultsSection" class="hidden">
+      <div class="results-head">
+        <div>
+          <div class="eyebrow">YOUR SHORTS</div>
+          <h2>Best moments found</h2>
+        </div>
+
+        <div class="results-sub">Ranked by excitement score</div>
+      </div>
+
+      <div id="clipsGrid" class="clips-grid"></div>
+    </section>
+
+    <section class="features">
+      <article>
+        <div class="icon">🔥</div>
+        <h3>Highlight detection</h3>
+        <p>Scores reactions, laughter, fast conversations, and high-energy speech.</p>
+      </article>
+
+      <article>
+        <div class="icon">▯</div>
+        <h3>Vertical output</h3>
+        <p>Renders 1080×1920 clips with a blurred cinematic background.</p>
+      </article>
+
+      <article>
+        <div class="icon icon-text">CC</div>
+        <h3>Big captions</h3>
+        <p>Whisper timestamps become bold captions designed for short-form video.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>StreamClip AI MVP • public YouTube videos only</footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
